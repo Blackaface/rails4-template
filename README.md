@@ -77,6 +77,7 @@ First Use This Template App
 ================================
 
 - search keywords `myapp` & `Myapp` and replace to your new name.
+- `rails generate rename:app_to your_new_app_name`
 - configs
   - config/application.yml
   - config/database.yml
