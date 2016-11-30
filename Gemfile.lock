@@ -435,10 +435,6 @@ GEM
       rgeo (~> 0.3)
     rollbar (2.13.3)
       multi_json
-    rspec (3.5.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -610,7 +606,6 @@ DEPENDENCIES
   redis
   redis-objects
   rollbar
-  rspec
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
