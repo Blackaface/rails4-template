@@ -128,3 +128,5 @@ gem 'bootstrap-sass'
 gem 'crummy'
 gem 'meta-tags', require: 'meta_tags'
 gem 'sitemap_generator'
+
+gem 'rack-cors', require: 'rack/cors'
