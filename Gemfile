@@ -121,7 +121,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-oauth2'
 
 # front-end
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '5.0.5'
 gem 'bootstrap-sass'
 
 # SEO
