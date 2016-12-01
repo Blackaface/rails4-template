@@ -11,7 +11,17 @@ RSpec.describe Api::UsersController, type: :controller do
 
   it '#index' do
 
-    get :index, abc: 1
+    get :index, params: { abc: 1 }
     expect(response.status).to eq(200)
+  end
+
+  describe '#create' do
+
+    it 'success case' do
+      expect {
+        post :create, params: { user: { email: 'mars@5fpro.com', password: '12341234' } }
+      }.to change { User.count }.by(1)
+      expect(response.status).to eq(200)
+    end
   end
 end

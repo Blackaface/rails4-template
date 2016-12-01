@@ -11,6 +11,8 @@ class Api::UsersController < Api::BaseController
   end
 
   # POST /api/users.json
+  #   user[email]
+  #   user[password]
   def create
     @user = User.new(params.require(:user).permit(:email, :password))
     if @user.save
