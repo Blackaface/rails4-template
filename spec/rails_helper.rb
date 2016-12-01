@@ -63,6 +63,9 @@ RSpec.configure do |config|
   config.before(:all) { puts 'before all (in config)'}
 
   config.after { Timecop.return }
+
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   # uncomment if you need specific time zone in default
   # config.before{ Time.zone = ActiveSupport::TimeZone["Taipei"] }
 end
