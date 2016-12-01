@@ -60,6 +60,7 @@ RSpec.configure do |config|
   config.before(:each){ Redis.current.flushdb }
 
   config.before(:suite) { puts 'before suite (in config)' }
+  config.before(:all) { puts 'before all (in config)'}
 
   config.after { Timecop.return }
   # uncomment if you need specific time zone in default
