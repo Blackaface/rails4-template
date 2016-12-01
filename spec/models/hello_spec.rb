@@ -39,7 +39,6 @@ describe 'Hello' do
 
     before do
       puts '3'
-      @c = Category.new(name: 'haha')
     end
 
     describe 'yyy' do
@@ -65,28 +64,36 @@ describe 'Hello' do
       end
     end
 
+    let(:c) { Category.new(name: 'haha') }
+
+    it 'testing let' do
+      c
+      puts 'second: c'
+      c
+    end
+
     it 'normal' do
       puts "3-1"
       expect {
-        @c.save
+        c.save
       }.to change { Category.count }
     end
 
     it '.by' do
       expect {
-        @c.save
+        c.save
       }.to change { Category.count }.by(1)
     end
 
     it '.to' do
       expect {
-        @c.save
+        c.save
       }.to change { Category.count }.to(1)
     end
 
     it '.from ... .to' do
       expect {
-        @c.save
+        c.save
       }.to change { Category.count }.from(0).to(1)
     end
   end
