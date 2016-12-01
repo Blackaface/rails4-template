@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 describe 'Hello' do
+  before do
+    puts '1'
+  end
+
   describe 'normal expect' do
 
     it 'to eq' do
@@ -33,11 +37,36 @@ describe 'Hello' do
 
   describe 'expect change...to' do
 
-    before(:each) do
+    before do
+      puts '3'
       @c = Category.new(name: 'haha')
     end
 
+    describe 'yyy' do
+
+      before do
+        puts '4'
+      end
+
+    end
+
+    describe 'xxxx' do
+
+      before do
+        puts '2'
+      end
+
+      it do
+        puts '2-1'
+      end
+
+      it do
+        puts '2-2'
+      end
+    end
+
     it 'normal' do
+      puts "3-1"
       expect {
         @c.save
       }.to change { Category.count }
