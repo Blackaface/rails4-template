@@ -54,5 +54,9 @@ RSpec.describe User, type: :model do
       # build, attributes_for same way
     end
 
+    it 'sequence' do
+      create :user
+      create :user
+    end
   end
 end
