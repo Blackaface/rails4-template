@@ -5,6 +5,10 @@ describe 'Hello' do
     puts '1'
   end
 
+  before(:all) do
+    puts 'before all'
+  end
+
   describe 'normal expect' do
 
     it 'to eq' do
