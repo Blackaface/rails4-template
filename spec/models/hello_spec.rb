@@ -9,6 +9,10 @@ describe 'Hello' do
     puts 'before all'
   end
 
+  before(:suite) do
+    puts 'before suite'
+  end
+
   describe 'normal expect' do
 
     it 'to eq' do

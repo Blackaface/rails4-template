@@ -59,6 +59,8 @@ RSpec.configure do |config|
   config.before(:each){ sidekiq_reset! }
   config.before(:each){ Redis.current.flushdb }
 
+  config.before(:suite) { puts 'before suite (in config)' }
+
   config.after { Timecop.return }
   # uncomment if you need specific time zone in default
   # config.before{ Time.zone = ActiveSupport::TimeZone["Taipei"] }
