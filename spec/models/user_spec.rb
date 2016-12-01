@@ -55,8 +55,10 @@ RSpec.describe User, type: :model do
     end
 
     it 'sequence' do
-      create :user
-      create :user
+      puts create(:user).email
+      puts build(:user).email
+      puts attributes_for(:user)[:email]
+      puts create(:user).email
     end
   end
 end
