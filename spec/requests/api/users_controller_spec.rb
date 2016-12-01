@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Api::UsersController, type: :request do
-  include ApiHelper
-
   let!(:user) { User.create!(email: 'xxx@example.com', password: '12341234') }
 
   it '#index' do
