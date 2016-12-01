@@ -1,19 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Api::UsersController, type: :request do
+  include ApiHelper
 
   let!(:user) { User.create!(email: 'xxx@example.com', password: '12341234') }
-
-  def parse_response
-    JSON.parse(response.body)
-  end
-
-  def api_params(params, header = {})
-    {
-      params: params,
-      headers: header.merge({ 'HTTP_X_TOKEN' => '123456' })
-    }
-  end
 
   it '#index' do
     get 'http://api.localhost/users.json', api_params(abc: 1)
