@@ -10,6 +10,8 @@ RSpec.describe Api::UsersController, type: :request do
       headers: { 'HTTP_X_TOKEN' => '123456' }
     expect(response.status).to eq(200)
     expect(response.body).to include(user.email)
+    result = JSON.parse(response.body)
+    expect(result.first["id"]).to eq(user.id)
   end
 
 end
