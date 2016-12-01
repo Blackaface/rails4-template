@@ -18,7 +18,7 @@ class Api::UsersController < Api::BaseController
     if @user.save
       render json: { user: @user }
     else
-      fail Api::Exception, @user.errors.full_messages
+      respond_error messages:  @user.errors.full_messages
     end
   end
 end
