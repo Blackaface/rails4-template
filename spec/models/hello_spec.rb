@@ -64,7 +64,14 @@ describe 'Hello' do
       end
     end
 
-    let!(:c) { Category.create(name: 'haha') }
+    let!(:c) do
+      puts '222'
+      Category.create(name: 'haha')
+    end
+
+    before do
+      puts '111'
+    end
 
     it 'testing let' do
       c
