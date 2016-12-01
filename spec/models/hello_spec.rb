@@ -32,31 +32,32 @@ describe 'Hello' do
   end
 
   describe 'expect change...to' do
+
+    before(:each) do
+      @c = Category.new(name: 'haha')
+    end
+
     it 'normal' do
-      c = Category.new(name: 'haha')
       expect {
-        c.save
+        @c.save
       }.to change { Category.count }
     end
 
     it '.by' do
-      c = Category.new(name: 'haha')
       expect {
-        c.save
+        @c.save
       }.to change { Category.count }.by(1)
     end
 
     it '.to' do
-      c = Category.new(name: 'haha')
       expect {
-        c.save
+        @c.save
       }.to change { Category.count }.to(1)
     end
 
     it '.from ... .to' do
-      c = Category.new(name: 'haha')
       expect {
-        c.save
+        @c.save
       }.to change { Category.count }.from(0).to(1)
     end
   end
