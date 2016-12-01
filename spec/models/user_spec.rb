@@ -29,8 +29,30 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let(:user) { create :user }
 
-  it 'FactoryGirl' do
-    expect(user).not_to be_new_record
-    expect(create(:user_with_avatar).avatar.url).to be_present
+  describe 'FactoryGirl' do
+    it 'create' do
+      user = create :user
+      expect(user).to be_a(User)
+      expect(user.id).to be_present
+    end
+
+    it 'build' do
+      user = build :user # User.new
+      expect(user).to be_a(User)
+      expect(user.id).to eq(nil)
+    end
+
+    it 'attributes_for' do
+      user = attributes_for :user
+      expect(user).to be_a(Hash)
+    end
+
+    it 'overwrite' do
+      user = create :user, email: 'xxxxxxxxxx@gmail.com', name: 'Mary'
+      expect(user.email).to eq('xxxxxxxxxx@gmail.com')
+      expect(user.name).to eq('Mary')
+      # build, attributes_for same way
+    end
+
   end
 end
