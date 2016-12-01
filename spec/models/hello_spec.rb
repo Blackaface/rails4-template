@@ -64,7 +64,7 @@ describe 'Hello' do
       end
     end
 
-    let(:c) { Category.new(name: 'haha') }
+    let!(:c) { Category.create(name: 'haha') }
 
     it 'testing let' do
       c
