@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::UsersController, type: :request do
-  let!(:user) { User.create!(email: 'xxx@example.com', password: '12341234') }
+  let!(:user) { create(:user) }
 
   it '#index' do
     get 'http://api.localhost/users.json', api_params(abc: 1)

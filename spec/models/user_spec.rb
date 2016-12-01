@@ -60,5 +60,10 @@ RSpec.describe User, type: :model do
       puts attributes_for(:user)[:email]
       puts create(:user).email
     end
+
+    it 'trait :invalid' do
+      user = build(:user, :invalid_email, :invalid_password, name: 'Mars')
+      expect(user.save).to eq(false)
+    end
   end
 end
